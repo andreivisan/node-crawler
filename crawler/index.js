@@ -1,6 +1,6 @@
 var Crawler = require('simplecrawler');
 
-module.exports.crawl = function(crawlerCallback) {
+module.exports.crawl = function() {
   var myCrawler = Crawler.crawl("http://programminglife.io/");
 
   var urls = [];
@@ -26,11 +26,6 @@ module.exports.crawl = function(crawlerCallback) {
   myCrawler.on("fetchcomplete", function(queueItem, responseBuffer, response) {
       console.log("I just received %s (%d bytes)", queueItem.url, responseBuffer.length);
       urls.push(queueItem);
-  });
-
-  myCrawler.on("complete", function() {
-    console.log("Complete with %d items", urls.length);
-    crawlerCallback(" ");
   });
 
   myCrawler.start();
