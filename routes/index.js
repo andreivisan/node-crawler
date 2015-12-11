@@ -5,7 +5,9 @@ var crawler = require('../crawler/index');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  crawler.crawl();
+  crawler.crawl(function(content) {
+    console.log(content);
+  });
   res.render('index', { title: 'Express' });
 });
 

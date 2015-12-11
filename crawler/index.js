@@ -23,7 +23,7 @@ module.exports.crawl = function(callback) {
 
   myCrawler.on("fetchcomplete", function(queueItem, responseBuffer, response) {
       console.log("I just received %s (%d bytes)", queueItem.url, responseBuffer.length);
-      urls.push(queueItem);
+      callback(response);
   });
 
   myCrawler.start();
