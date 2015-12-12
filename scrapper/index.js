@@ -1,5 +1,4 @@
 var cheerio = require('cheerio');
-var util = require('util');
 
 module.exports.extractData = function(html, config, callback) {
 
