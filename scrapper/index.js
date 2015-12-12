@@ -1,6 +1,6 @@
 var cheerio = require('cheerio');
 
-module.exports.extractData = function(html, config, callback) {
+module.exports.extractData = function(html, config) {
 
   var $ = cheerio.load(html);
 
