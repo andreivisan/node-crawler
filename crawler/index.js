@@ -1,7 +1,7 @@
 var Crawler = require('simplecrawler');
 
 module.exports.crawl = function(callback) {
-  var myCrawler = Crawler.crawl("http://programminglife.io/merge-sort-in-java/");
+  var myCrawler = Crawler.crawl("http://programminglife.io/");
 
   var urls = [];
 
@@ -10,7 +10,7 @@ module.exports.crawl = function(callback) {
   });
 
   myCrawler.on("fetchcomplete", function(queueItem, responseBuffer, response) {
-      console.log("I just received %s (%d bytes)", queueItem.url, responseBuffer.length);
+      //console.log("I just received %s (%d bytes)", queueItem.url, responseBuffer.length);
       callback(responseBuffer);
   });
 
