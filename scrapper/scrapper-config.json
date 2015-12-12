@@ -2,6 +2,6 @@
   "article" : {
     "base": ".archive",
     "title": ".col .span_8",
-    "date": ".post-date"
+    "date": ".post-date time"
   }
 }

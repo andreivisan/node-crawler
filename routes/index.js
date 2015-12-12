@@ -12,7 +12,9 @@ router.get('/', function(req, res) {
   var fileContent = fs.readFileSync(filePath);
 
   crawler.crawl(function(content) {
-    scrapper.extractData(content, JSON.parse(fileContent));
+    scrapper.extractData(content, JSON.parse(fileContent), function(posts) {
+      console.log("Posts: %s", JSON.stringify(posts));
+    });
   });
   res.render('index', { title: 'Express' });
 });
